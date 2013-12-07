@@ -1,0 +1,30 @@
+meta:                                       
+    site_title: "统计半边天-贝叶斯"
+    site_subtitle: "The way it should be."
+    site_content: "博客,IT技术,锻炼，朋友，学习那点事"
+    site_language: "CN"
+
+    defualt_limit: 50
+    author:
+        full_name: Gao Lei
+        short_name: Leizi
+        name: 
+        email: bayes1701@gmail.com
+
+
+baseurl: http://bayes-stat.github.com
+markdown: kramdown
+pygments: true
+permalink: /:year/:month/:day/:title
+auto: true
+debug: true
+
+links:
+    - url: "http://cos.name"
+      name: 统计之都
+      title: 关注统计
+    - url: "http://cos.name.cn"
+      name: 统计之都论坛
+      title: 三人行必有我师也
+
+
