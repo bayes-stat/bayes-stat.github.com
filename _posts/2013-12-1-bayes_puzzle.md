@@ -5,8 +5,8 @@ author: 刘乐平
 categories:
 - puzzle 
 
-pdf: "/download/Unexpected but in math stat_2003.pdf"  
-slide: "/download/Unexpected but in math stat_2003.pdf"  
+pdf: "/download/uncertainty_bayes.pdf"  
+slide: "/download/uncertainty_bayes.pdf"  
 
 
 ---
