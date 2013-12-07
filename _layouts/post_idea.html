@@ -12,6 +12,9 @@ layout: defaultpost1
 <div id = "content"><font size = 4>
 	{{ content }}
 </font>
+<br>
+ {% if page.pdf != null %}
+<a href="{{site.baseurl}}{{ page.pdf }}" target="_blank">[PDF下载]</a>         {% endif %}
 </div>
 <!-- JiaThis Button BEGIN -->
 <div class="jiathis_style_32x32">
