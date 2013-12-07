@@ -1,0 +1,36 @@
+---
+layout: default3
+title: 善解贝叶斯之惑
+---
+<div id="twothird" >
+    <ul>
+        
+
+            {% for post in site.categories.puzzle limit:site.meta.default_limit %}
+			<li>
+                [ <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time> ]</span> 
+            {% if post.short_title %}
+		
+            <a href="{{ site.baseurl }}{{post.url}}" class="article" title="{{ post.title }}" target="_blank" >{{ post.short_title }}</a>
+            {% else %}
+
+	<a href="{{ site.baseurl }}{{post.url}}" class="article" title="{{ post.title }}" target="_blank">{{ post.title }}</a>
+         {% endif %}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             
+						{% if post.pdf != null %} 
+                   
+	<a href="{{site.baseurl}}{{ post.pdf }}" target="_blank">[PDF]</a>         {% endif %}
+											{% if post.slide != null %} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  
+	 <a href="{{site.baseurl}}{{ post.slide }}" target="_blank">[Slide]</a>       {% endif %}
+
+           </li>
+            {% endfor %}
+       
+		</ul>
+
+
+
+
+</div><!-- /main --> 
