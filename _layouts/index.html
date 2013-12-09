@@ -9,7 +9,7 @@ layout: default
         </div>
 		<br>
         <ul class="ul-list nomb">
-            {% for post in site.categories.idea limit:6 %}
+            {% for post in site.categories.idea limit:3 %}
             <li><span class="date">
                 [ <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%m/%d" }}</time> ]</span> 
             {% if post.short_title %}
@@ -31,7 +31,7 @@ layout: default
         </div>
 		<br>
         <ul class="ul-list nomb">
-            {% for post in site.categories.skill limit:6 %}
+            {% for post in site.categories.skill limit:3 %}
             <li><span class="date">
                 [ <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%m/%d" }}</time> ]</span> 
             {% if post.short_title %}
@@ -52,7 +52,7 @@ layout: default
         </div>
 		<br>
         <ul class="ul-list nomb">
-            {% for post in site.categories.puzzle limit:10 %}
+            {% for post in site.categories.puzzle limit:3 %}
             <li><span class="date">
                 [ <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%m/%d" }}</time> ]</span> 
             {% if post.short_title %}
