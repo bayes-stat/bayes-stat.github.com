@@ -35,9 +35,9 @@ slide: "/download/marily.pdf"
 
 The Monty Hall problem
 
-咱们来打个赌！！！！
-
-    “换” 还是“不换”？—— 面对豪华轿车和小山羊，你怎么“决择”？
+# 咱们来打个赌！！！！ #
+## 
+    “换” 还是“不换”？—— 面对豪华轿车和小山羊，你怎么“决择”？ ##
 
 
 ![TOB](https://bayes-stat.github.com/images/131204.jpg)
@@ -70,7 +70,7 @@ Suppose you’re on a game show, and you’re given the choice of three doors. B
 
 ![TOB](https://bayes-stat.github.com/images/131206.png)
 
-玛利亚却给出了“意料之外”的答案 —— “换，你应该换” ！
+# 玛利亚却给出了“意料之外”的答案 —— “换，你应该换” ！ #
      
      因为你第一次猜中轿车的概率是1/3，而你第二次赢得轿车的概率为2/3（不是1/2）。 
 
@@ -82,7 +82,8 @@ Suppose you’re on a game show, and you’re given the choice of three doors. B
 在 Paradc Magazine!1991 年第2 期她的专栏里:
 
     我是否可以建议您在重新回答这个问题之前去找一本标准的概率书参考参考!? ( University of Florida)
-   您的逻辑是错误的, 我可以肯定您一定收到了许多高中生和大学生关于这个问题的来
+   
+您的逻辑是错误的, 我可以肯定您一定收到了许多高中生和大学生关于这个问题的来
 信, 希望你尽快更正, 我想这会对您的专栏有帮助的!。( Georgia State University)
 
     在与至少三位数学家讨论后, 我感到震惊, 你意然还没发现你的错误。!( Dickinson State University)
