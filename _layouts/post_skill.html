@@ -2,20 +2,16 @@
 layout: defaultpost2
 ---
 
-<h1 style="font-size:150%;line-height:110%;font-family:Microsoft YaHei;">{{ page.title }}</h1>
-<p class="small", style="line-height:10%;font-family:Microsoft YaHei;color:green"><br>{{ page.date | date: '%d %B, %Y' }}      {% if page.author != null %}
+<h1 style="font-size:180%">{{ page.title }}</h1>
+<p class="small">{{ page.date | date: '%d %B, %Y' }}      {% if page.author != null %}
       By {{ page.author }} &nbsp;
       {% else %}
       By GaoLei
-      {% endif %}<br><br><br><br><br><br><br><br><br><br><br><br></p>
+      {% endif %}</p>
 <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=default"></script>
 <div id = "content"><font size = 4>
 	{{ content }}
 </font>
-<br>
- {% if page.pdf != null %}
-&nbsp;&nbsp <a href="{{site.baseurl}}{{ page.pdf }}" target="_blank" style="font-family:Microsoft YaHei;text-decoration : none ;">PDF下载</a>  <br>  <br><hr>     {% endif %}
-
 </div>
 <!-- JiaThis Button BEGIN -->
 <div class="jiathis_style_32x32">
