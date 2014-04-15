@@ -4,7 +4,7 @@ title: 大规模推断：估计、检验、预测的经验贝叶斯方法
 author: 高磊
 categories:
 - skill
-pdf: "/download/stein.pdf"  
+
 ---
 
 ----------
@@ -45,7 +45,8 @@ pdf: "/download/stein.pdf"
 - [figure4.2.R ](http://bayes-stat.github.io/code/largescale/figure4.2.R )
 - [figure4.3.R ](http://bayes-stat.github.io/code/largescale/figure4.3.R )
 - [figure4.5.R ](http://bayes-stat.github.io/code/largescale/figure4.5.R )
-- 
+- 待更新
+
 ----------
 
 
