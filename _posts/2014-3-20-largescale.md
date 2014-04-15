@@ -8,8 +8,10 @@ pdf: "/download/stein.pdf"
 ---
 
 ----------
-###讨论书目
-####Large Scale Inference：Empirical Bayes Methods for Estimation, Testing, and Prediction
+**讨论书目**
+
+**Large Scale Inference：Empirical Bayes Methods for Estimation, Testing, and Prediction**
+
 ![](https://bayes-stat.github.com/images/book2.png)
 
 - [Bradly Efron主页](http://statweb.stanford.edu/~ckirby/brad/)
@@ -21,22 +23,31 @@ pdf: "/download/stein.pdf"
 
 
 ----------
-###大规模推断讨论班
+**大规模推断讨论班**
+
 指导老师：刘乐平
-成员：杨晓康、张洋、宋培培、张猛、刘博、朱祁恒、高磊
+
+成员：高磊、杨晓康、张洋、宋培培、张猛、刘博、朱祁恒
 
 
 ----------
-###各章翻译(pdf版）
+**章节翻译(pdf版）**
+
 - [chapter1](https://bayes-stat.github.com/download/chapter1.pdf)
 - [chapter2](https://bayes-stat.github.com/download/chapter2.pdf)
 - 待更新
 
 ----------
-###讨论中遇到的一些问题
+**书中图形绘制的R代码**
 
-
+- [figure2.4.R ](http://bayes-stat.github.io//largescale/figure2.4.R )
+- [figure3.1.R ](http://bayes-stat.github.io//largescale/figure3.1.R )
+- [figure4.2.R ](http://bayes-stat.github.io//largescale/figure4.2.R )
+- [figure4.3.R ](http://bayes-stat.github.io//largescale/figure4.3.R )
+- [figure4.5.R ](http://bayes-stat.github.io//largescale/figure4.5.R )
+- 
 ----------
+
 
 
 

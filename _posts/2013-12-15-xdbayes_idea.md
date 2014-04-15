@@ -33,7 +33,7 @@ pdf: "/download/liulp_yuanwei_2004.pdf"
 
 ![TOB](https://bayes-stat.github.com/images/xdbys02.jpg)
 
-**# 目前以MCMC方法为代表的现代贝叶斯统计学已广泛应用于几乎所有的学科，并取得了显著的成果。 #**
+**目前以MCMC方法为代表的现代贝叶斯统计学已广泛应用于几乎所有的学科，并取得了显著的成果.**
 
 以经济学为例，美国经济学联合会就将2002年度的“准诺贝尔经济学奖”——“杰出资深会员奖（Distinguished Fellow Award）”授予了芝加哥大学Arnold Zellner教授，
 
