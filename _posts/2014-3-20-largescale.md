@@ -33,18 +33,18 @@ pdf: "/download/stein.pdf"
 ----------
 **章节翻译(pdf版）**
 
-- [chapter1](https://bayes-stat.github.com/download/chapter1.pdf)
-- [chapter2](https://bayes-stat.github.com/download/chapter2.pdf)
+- [chapter1](https://bayes-stat.github.com/download/chapte1.pdf)
+- [chapter2](https://bayes-stat.github.com/download/第二章.pdf)
 - 待更新
 
 ----------
 **书中图形绘制的R代码**
 
-- [figure2.4.R ](http://bayes-stat.github.io//largescale/figure2.4.R )
-- [figure3.1.R ](http://bayes-stat.github.io//largescale/figure3.1.R )
-- [figure4.2.R ](http://bayes-stat.github.io//largescale/figure4.2.R )
-- [figure4.3.R ](http://bayes-stat.github.io//largescale/figure4.3.R )
-- [figure4.5.R ](http://bayes-stat.github.io//largescale/figure4.5.R )
+- [figure2.4.R ](http://bayes-stat.github.io/code/largescale/figure2.4.R )
+- [figure3.1.R ](http://bayes-stat.github.io/code/largescale/figure3.1.R )
+- [figure4.2.R ](http://bayes-stat.github.io/code/largescale/figure4.2.R )
+- [figure4.3.R ](http://bayes-stat.github.io/code/largescale/figure4.3.R )
+- [figure4.5.R ](http://bayes-stat.github.io/code/largescale/figure4.5.R )
 - 
 ----------
 
