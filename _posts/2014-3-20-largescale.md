@@ -40,7 +40,7 @@ categories:
 ----------
 **书中图形绘制的R代码**
 
-- [figure2.4.R ](http://bayes-stat.github.io/code/largescale/figure2.4.R )[图形结果 ](http://bayes-stat.github.io/images/largescale/figure2.4.png )
+- [figure2.4.R ](http://bayes-stat.github.io/code/largescale/figure2.4.R )[图形结果1](http://bayes-stat.github.io/images/largescale/figure2.4.png )[figure2.4.sas ](http://bayes-stat.github.io/code/largescale/figure2.4.sas )[图形结果2](http://bayes-stat.github.io/images/largescale/figure2.4b.png )
 - [figure3.1.R ](http://bayes-stat.github.io/code/largescale/figure3.1.R )[图形结果1 ](http://bayes-stat.github.io/images/largescale/figure3.1a.png)[图形结果2 ](http://bayes-stat.github.io/images/largescale/figure3.1b.png)
 - [figure4.2.R ](http://bayes-stat.github.io/code/largescale/figure4.2.R )[图形结果1 ](http://bayes-stat.github.io/images/largescale/figure4.2a.png)[图形结果2 ](http://bayes-stat.github.io/images/largescale/figure4.2b.png)
 - [figure4.3.R ](http://bayes-stat.github.io/code/largescale/figure4.3.R )[图形结果1 ](http://bayes-stat.github.io/images/largescale/figure4.3a.png)[图形结果2 ](http://bayes-stat.github.io/images/largescale/figure4.3b.png)[图形结果3 ](http://bayes-stat.github.io/images/largescale/figure4.3c.png)[图形结果4 ](http://bayes-stat.github.io/images/largescale/figure4.3d.png)
