@@ -4,7 +4,7 @@
 load("DTIdata.Rda")
 z <- DTIdata[order(DTIdata[, 4]), 4]
 N <- 15443
-plot(z, pnorm(z)/((1:N)/N), type = "l", col = 2, ylim = c(0, 1.1), 
+plot(z, pnorm(z)/((1:N)/N), type = "b", col = 2, ylim = c(0, 1.1), 
      ylab = "Fdrbar(z)", xlab = "z values")
 points(z, pnorm(z)/((1:N)/N), col = 2, cex = 0.1)
 abline(h = 1, lty = 3)
@@ -14,6 +14,38 @@ lines(z, (1-pnorm(z))/((N:1)/N), type = "l", col = 1, ylim = c(0, 1.1))
 abline(h = 0.1, lty = 3)
 abline(h = 0.25, lty = 3)
 abline(h = 0.5, lty = 3)
+
+inde <- NULL
+for(i  in 1:N){
+  if(fun(i)<=0.1) {
+    inde <- i;break
+  }
+}
+points(z[inde],0,col="green",pch=17)
+text(z[inde],0, 0.1, pos = 3)
+points(z[inde],0.1,col="green",pch=16)
+
+
+inde <- NULL
+for(i  in 1:N){
+  if(fun(i)<=0.5) {
+    inde <- i;break
+  }
+}
+points(z[inde],0,col="green",pch=17)
+text(z[inde],0, 0.5, pos = 3)
+points(z[inde],0.5,col="green",pch=16)
+
+
+inde <- NULL
+for(i  in 1:N){
+  if(fun(i)<=0.25) {
+    inde <- i;break
+  }
+}
+points(z[inde],0,col="green",pch=17)
+text(z[inde],0, 0.25, pos = 3)
+points(z[inde],0.25,col="green",pch=16)
 ###############################################
 #  DTI数据双侧侧检验的FDR（z)值
 ###############################################
