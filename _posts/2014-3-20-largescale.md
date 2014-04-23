@@ -52,8 +52,8 @@ categories:
 
 **相关整理**
 
-- [T检验的几何解释（高磊） ](https://bayes-stat.github.com/download/largescale/t.test.pdf)
-- [用delta方法求随机变量函数的方差（张洋） ](https://bayes-stat.github.com/download/largescale/delta.pdf)
+- [T检验的几何解释 ](https://bayes-stat.github.com/download/largescale/t.test.pdf)
+- [用delta方法求随机变量函数的方差 ](https://bayes-stat.github.com/download/largescale/delta.pdf)
 
 ----------
 
