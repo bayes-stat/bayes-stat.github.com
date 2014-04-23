@@ -38,15 +38,22 @@ categories:
 - 待更新
 
 ----------
-**书中图形绘制的R代码**
+**书中图形绘制的R/SAS代码**
 
-- [figure2.4.R ](http://bayes-stat.github.io/code/largescale/figure2.4.R )[图形结果1](http://bayes-stat.github.io/images/largescale/figure2.4.png )[figure2.4.sas ](http://bayes-stat.github.io/code/largescale/figure2.4.sas )[图形结果2](http://bayes-stat.github.io/images/largescale/figure2.4b.png )
+- [figure2.4.R ](http://bayes-stat.github.io/code/largescale/figure2.4.R )[图形结果1 ](http://bayes-stat.github.io/images/largescale/figure2.4.png )[figure2.4.sas ](http://bayes-stat.github.io/code/largescale/figure2.4.sas )[图形结果2](http://bayes-stat.github.io/images/largescale/figure2.4b.png )
 - [figure3.1.R ](http://bayes-stat.github.io/code/largescale/figure3.1.R )[图形结果1 ](http://bayes-stat.github.io/images/largescale/figure3.1a.png)[图形结果2 ](http://bayes-stat.github.io/images/largescale/figure3.1b.png)
 - [figure4.2.R ](http://bayes-stat.github.io/code/largescale/figure4.2.R )[图形结果1 ](http://bayes-stat.github.io/images/largescale/figure4.2a.png)[图形结果2 ](http://bayes-stat.github.io/images/largescale/figure4.2b.png)
 - [figure4.3.R ](http://bayes-stat.github.io/code/largescale/figure4.3.R )[图形结果1 ](http://bayes-stat.github.io/images/largescale/figure4.3a.png)[图形结果2 ](http://bayes-stat.github.io/images/largescale/figure4.3b.png)[图形结果3 ](http://bayes-stat.github.io/images/largescale/figure4.3c.png)[图形结果4 ](http://bayes-stat.github.io/images/largescale/figure4.3d.png)
 - [figure4.5.R ](http://bayes-stat.github.io/code/largescale/figure4.5.R )[图形结果1 ](http://bayes-stat.github.io/images/largescale/figure4.5.png)
 - [figure4.6.R ](http://bayes-stat.github.io/code/largescale/figure4.6.R )[图形结果1 ](http://bayes-stat.github.io/images/largescale/figure4.6a.png)[图形结果2](http://bayes-stat.github.io/images/largescale/figure4.6b.png)[图形结果3](http://bayes-stat.github.io/images/largescale/figure4.6c.png)
 - 待更新
+
+----------
+
+**相关整理**
+
+- [T检验的几何解释（高磊） ](https://bayes-stat.github.com/download/largescale/t.test.pdf)
+- [用delta方法求随机变量函数的方差（张洋） ](https://bayes-stat.github.com/download/largescale/delta.pdf)
 
 ----------
 
