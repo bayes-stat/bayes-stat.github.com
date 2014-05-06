@@ -57,6 +57,10 @@ categories:
 - [exercise1.8.R ](http://bayes-stat.github.io/code/largescale/exercise1.8.R )[图形结果1 ](http://bayes-stat.github.io/images/largescale/exercise1.8.png )
 - [exercise2.1.R ](http://bayes-stat.github.io/code/largescale/exercise2.1.R )[图形结果1 ](http://bayes-stat.github.io/images/largescale/exercise2.1.png )
 - [exercise4.6.R ](http://bayes-stat.github.io/code/largescale/exercise4.6.R )[图形结果1 ](http://bayes-stat.github.io/images/largescale/exercise4.6.png )
+- [exercise4.7.R ](http://bayes-stat.github.io/code/largescale/exercise4.7.R )
+- [exercise4.8.R ](http://bayes-stat.github.io/code/largescale/exercise4.8.R )
+- [exercise4.9.R ](http://bayes-stat.github.io/code/largescale/exercise4.9.R )[图形结果1 ](http://bayes-stat.github.io/images/largescale/exercise4.9.png )
+- [exercise4.12.R ](http://bayes-stat.github.io/code/largescale/exercise4.12.R )
 - 待更新
 
 ----------
