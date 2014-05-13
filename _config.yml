@@ -1,7 +1,7 @@
 meta:                                       
     site_title: "统计半边天-贝叶斯"
-    site_subtitle: "The way it should be."
-    site_content: "博客,IT技术,锻炼，朋友，学习那点事"
+    site_subtitle: "Bayesian statistics"
+    site_content: "贝叶斯,大规模推断,贝叶斯之道,贝叶斯讨论班,天津财经"
     site_language: "CN"
 
     defualt_limit: 50
