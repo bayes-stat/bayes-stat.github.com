@@ -73,7 +73,7 @@ pdf: "/download/largescale/讨论班.pdf"
 - [用delta方法求随机变量函数的方差 ](https://bayes-stat.github.com/download/largescale/delta.pdf)
 - [疾病检测与贝叶斯公式 ](https://bayes-stat.github.com/download/largescale/疾病检测与贝叶斯公式.pdf)
 - [棱镜计划与贝叶斯公式 ](https://bayes-stat.github.com/download/largescale/棱镜计划与贝叶斯公式.pdf)
-- - [Sally Clark案件与贝叶斯公式 ](https://bayes-stat.github.com/download/largescale/sally.pdf)
+- [Sally Clark案件与贝叶斯公式 ](https://bayes-stat.github.com/download/largescale/sally.pdf)
 - 待更新
 
 ----------
