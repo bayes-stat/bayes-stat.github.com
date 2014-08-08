@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv=Content-Type content="text/html;charset=utf-8">
+        <meta name="robots" content="all,follow" />
+        <title>不确定性与bayes统计(中国统计, 2003) - 统计半边天-贝叶斯</title>
+        <meta name="keywords" content="贝叶斯,大规模推断,贝叶斯之道,贝叶斯讨论班,天津财经"/>
+        <meta name="author" lang="en" content="All: Demi-Panda Lab [demi-panda.com]; e-mail: blog.pandam@gmail.com" />
+        <meta name="copyright" lang="en" content="@2012 Demi_Panda Lab, All Rights Reserved!" />
+        <meta name="description" content="Bayesian statistics贝叶斯,大规模推断,贝叶斯之道,贝叶斯讨论班,天津财经" />
+        <meta property="wb:webmaster" content="eb26a33b1e192873" />
+        <meta name="chinaz-site-verification" content="54c83ea9-059c-4447-95ec-4dc8b16e60b2" />
+        <meta name="baidu_union_verify" content="67d51e25cc69ae324f028d2d333b753a">
+        <meta name="chinaz-site-verification" content="081e7651-48c6-4c2f-a569-99321685eab1" />
+        <link rel="shortcut icon" href="http://bayes-stat.github.com/media/demi/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" media="screen,projection" type="text/css" href="http://gaolei786.github.com/media/demi/css/style.css" />
+        <link rel="stylesheet" media="screen,projection" type="text/css" href="http://gaolei786.github.com/media/demi/css/main.css" />
+        <link rel="stylesheet" media="screen,projection" type="text/css" href="http://gaolei786.github.com/media/demi/css/reset.css" />
+        <link rel="stylesheet" media="screen,projection" type="text/css" href="http://gaolei786.github.com/media/demi/css/superfish.css" />
+        <link rel="stylesheet" media="screen,projection" type="text/css" href="http://gaolei786.github.com/media/demi/css/prettify.css" />
+        <link rel="alternate" type="application/rss+xml" title="统计半边天-贝叶斯" href="http://bayes-stat.github.com/rss.xml" />
+        <script src="http://bayes-stat.github.com/media/js/prettify.js" type="text/javascript"></script>
+        <script src="http://bayes-stat.github.com/media/js/jquery-1.6.1.min.js" type="text/javascript"></script>
+        <script src="http://bayes-stat.github.com/media/js/jquery.jcarousel.min.js" type="text/javascript"></script>
+        <script src="http://bayes-stat.github.com/media/js/jquery.tagcloud.js" type="text/javascript"></script>
+        <script src="http://bayes-stat.github.com/media/js/jquery.demi.slider.js" type="text/javascript"></script>
+		
+<style type="text/css">
+#content
+{
+position:relative;
+width: 960px
+}
+div#third{width:33%;float:left}
+div#twothird{width:60%;text-align:left;
+ margin:0 auto;line-height:140%"}
+div#content{width:100%;text-indent:2em;font-size:120%;}
+div#content p {font-family:Microsoft YaHei;}
+div#content img  { padding:0; border:0;max-width:500px;align:center;
+max-height:300px} 
+div#content p {line-height: 125%}
+div#content li {text-indent:0em}
+div#content ul {margin-left:2em}
+li {line-height: 125%}
+code {
+            margin: 0 2px;
+            padding: 0px 5px;
+            font-size: 15px;
+
+            }
+<!--
+body{
+line-height:70%
+}
+-->
+</style>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+    </head>
+
+
+    <body >
+<center><p>
+
+<a href="https://bayes-stat.github.com" title="返回主页"><img src="http://bayes-stat.github.com/images/def1.png" width = "65%"></a>
+</p></center>
+<div id = "twothird">
+<h1 style="font-size:180%">不确定性与bayes统计(中国统计, 2003)</h1>
+<p class="small">01 December, 2013      
+      By 刘乐平 &nbsp;
+      </p>
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=default"></script>
+<div id = "content"><font size = 4>
+	<p>论文中引用本文：
+刘乐平. 不确定性与 Bayes 统计[J]. 中国统计, 2003, 7: 17-18.</p>
+
+<p>网页中引用本文：
+贝叶斯之道 (http://bayes-stat.github.com)</p>
+
+<p><img src="https://bayes-stat.github.com/images/200302.png" alt="TOB" /></p>
+
+<p>www.vbpm.org </p>
+
+<p>什 么 是 不 确 定 ? 这 是 一个既简单而又复杂的问题。说其简单，因为不确定= 不+确定，英文单词亦如此，Unceftainty=Un+certainty，确定之外就是不确定。论其复杂，因为如再问起什么是确定的，那就不容易回答了。</p>
+
+<p><img src="https://bayes-stat.github.com/images/200303.jpg" alt="TOB" /></p>
+
+<p>www.changingorganisations.com</p>
+
+<p>在我们生活的这个世界，不确定性无处不在，无时不有。且不论浩瀚的宇宙因何而生，无际的星云为何而去，也不谈神秘基因的排列组合，微小电子的舞动轨迹。就用发生在我们每个人身边的，我们在日常生活中肯定、必须、确定要遇见的不确定性来说，就比比皆是 。</p>
+
+<p><img src="https://bayes-stat.github.com/images/200304.jpg" alt="TOB" /></p>
+
+<p>www.compression.org </p>
+
+<p>在一个人成为一个人之前，他(或她) 的父母的结合肯定是不确定的，是两小无猜，还是媒妁之言，是一见钟情，还是随遇而安(如再往上一代考证，他的爷爷与奶奶，她的外公外婆，不确定性的程度就更大了) 。在这个人出生之前，是男是女，是高是矮、是胖是瘦、是俊是丑、不能确定；出生之后，是成龙成凤，还是无作无为；是功成名就，还是身败名裂；平平淡淡、风风火火、无法预知。这样看来，人的一生，用通俗的话讲是“非常非常可能不一定”。稍微严密些，可以从不确定性方面总结出一个公式，这就是“不确定性的 n 次方，其中，n 的值对每个人来说都是不确定的。”</p>
+
+<p><img src="https://bayes-stat.github.com/images/200305.png" alt="TOB" /></p>
+
+<p>www.bloomberg.com </p>
+
+<p>在第二次世界大战期间，幽默作家和数学家Stehen Leacak说过这样一段非常幽默的话：“人们将告诉你：数学、哲学和神学现今都凑到一块了。在某种意义上表明：它们就像一起参加葬礼的三个人那样凑到一块，这个葬礼就是确定性的死亡。”</p>
+
+<p>……</p>
+
+<p>早在三百年以前，人们就开始严肃地考虑当存在不确定性时如何进行推理这个问题。Samuel Kotz和吴喜之教授猜测“James Bernoulli(1713)恐怕是第一个构造该问题的人”。Befnoulli 意识到在可应用于机会游戏的演绎逻辑和每日生活中的归纳逻辑之间的区别，对于他来说，这个未回答的问题在于前者的机理如何能帮助处理后者的推断问题。而托马斯．贝叶斯(Reverend Tho-mas Bayes，1702-1761)是对归纳推理给出精确定量表达方式的第一人，他死后发表的论文，应该作为归纳演绎科学史上最著名的经典文献之一。</p>
+
+<p>我国著名科学家钱学森的一段话非常值得我们深思：“处理复杂行为系统的定量学方法学，是科学理论、经验和专家判断力的结合，这是定量方法学，是半经验半理论的。提出经验性假设(猜想或判断)，是建立复杂行为系统数学模型的出发点。这些经验性假设(猜想或判断)不能用严谨的科学方法证明，但需要经验性数据对其确实性进行检测。</p>
+
+<p><img src="https://bayes-stat.github.com/images/200309.gif" alt="TOB" /></p>
+
+<p>energy.lbl.gov</p>
+
+<p>从经验性假设(猜想或判断)出发，通过定量方法途径获得的结论，仍然具有半经验、半理论的属性。当人们寻求用定量的方法处理复杂行为系统时，容易注重于数学模型和逻辑推理，而忽视数学模型微妙的经验含义或解释。要知道，这样的数学模型看起来“理论性”很强，其实不免牵强附会，从而脱离真实。与其如此，反不如从建模一开始就老实承认理论的不足，而求援于经验的判断，让定性的方法和定量的方法结合起来，最后定量。”钱先生的话无疑给我们在面对不确定性时，怎样将定性和定量的方法进行有机地结合指明了一个明确的方向。</p>
+
+<p>2002 年是贝叶斯诞辰 300 周年，本文最初的设想是为了纪念这位顶住统计学“半边天”的“圣人”。但由于诸多不确定的原因拖至现在才得以完成。贝叶斯的家乡是否有纪念活动，其他国家是否也有人撰文纪念他，我不得而知，不敢确定!(还有更加不确定的是—本文是否能够发表?)不过，不管怎样，可以确定的是正是因为有了不确定性，我们的世界才会这样美妙，我们的人生才会如此精彩，我们的统计才会充满生机!</p>
+
+<p><img src="https://bayes-stat.github.com/images/200310.jpg" alt="TOB" /></p>
+
+<p>www.mindmapart.com</p>
+
+
+<br>
+
+<a href="http://bayes-stat.github.com/download/uncertainty_bayes.pdf"  style="font-family:Microsoft YaHei;color:green" target="blank">本文PDF下载</a>
+      
+</font>
+<hr>
+<br>
+</div>
+
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style_32x32">
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_tqq"></a>
+	<a class="jiathis_button_renren"></a>
+	<a class="jiathis_button_kaixin001"></a>
+	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+<div class="social">
+	<a href="https://twitter.com/share" class="twitter-share-button" data-via="zensavona" data-dnt="true">Tweet</a>
+	<!-- Override the URL and Title for the button -->
+</div>
+<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=0" async=""></script>
+<!-- UY END -->
+
+
+  
+</div>
+     </body>
+ </html>
+

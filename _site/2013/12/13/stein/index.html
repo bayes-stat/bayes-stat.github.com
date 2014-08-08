@@ -1,0 +1,219 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv=Content-Type content="text/html;charset=utf-8">
+        <meta name="robots" content="all,follow" />
+        <title>Stein's Estimator:逝去的悖论 - 统计半边天-贝叶斯</title>
+        <meta name="keywords" content="贝叶斯,大规模推断,贝叶斯之道,贝叶斯讨论班,天津财经"/>
+        <meta name="author" lang="en" content="All: Demi-Panda Lab [demi-panda.com]; e-mail: blog.pandam@gmail.com" />
+        <meta name="copyright" lang="en" content="@2012 Demi_Panda Lab, All Rights Reserved!" />
+        <meta name="description" content="Bayesian statistics贝叶斯,大规模推断,贝叶斯之道,贝叶斯讨论班,天津财经" />
+        <meta property="wb:webmaster" content="eb26a33b1e192873" />
+        <meta name="chinaz-site-verification" content="54c83ea9-059c-4447-95ec-4dc8b16e60b2" />
+        <meta name="baidu_union_verify" content="67d51e25cc69ae324f028d2d333b753a">
+        <meta name="chinaz-site-verification" content="081e7651-48c6-4c2f-a569-99321685eab1" />
+        <link rel="shortcut icon" href="http://bayes-stat.github.com/media/demi/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" media="screen,projection" type="text/css" href="http://gaolei786.github.com/media/demi/css/style.css" />
+        <link rel="stylesheet" media="screen,projection" type="text/css" href="http://gaolei786.github.com/media/demi/css/main.css" />
+        <link rel="stylesheet" media="screen,projection" type="text/css" href="http://gaolei786.github.com/media/demi/css/reset.css" />
+        <link rel="stylesheet" media="screen,projection" type="text/css" href="http://gaolei786.github.com/media/demi/css/superfish.css" />
+        <link rel="stylesheet" media="screen,projection" type="text/css" href="http://gaolei786.github.com/media/demi/css/prettify.css" />
+        <link rel="alternate" type="application/rss+xml" title="统计半边天-贝叶斯" href="http://bayes-stat.github.com/rss.xml" />
+        <script src="http://bayes-stat.github.com/media/js/prettify.js" type="text/javascript"></script>
+        <script src="http://bayes-stat.github.com/media/js/jquery-1.6.1.min.js" type="text/javascript"></script>
+        <script src="http://bayes-stat.github.com/media/js/jquery.jcarousel.min.js" type="text/javascript"></script>
+        <script src="http://bayes-stat.github.com/media/js/jquery.tagcloud.js" type="text/javascript"></script>
+        <script src="http://bayes-stat.github.com/media/js/jquery.demi.slider.js" type="text/javascript"></script>
+		
+<style type="text/css">
+#content
+{
+position:relative;
+width: 960px
+}
+div#third{width:33%;float:left}
+div#twothird{width:60%;text-align:left;
+ margin:0 auto;line-height:140%"}
+div#content{width:100%;text-indent:2em;font-size:120%;}
+div#content p {font-family:Microsoft YaHei;}
+div#content img  { padding:0; border:0;max-width:500px;align:center;
+max-height:300px} 
+div#content li {text-indent:0em}
+div#content p {line-height: 125%}
+div#content ul {margin-left:2em}
+li {line-height: 125%}
+code {
+            margin: 0 2px;
+            padding: 0px 5px;
+            font-size: 15px;
+
+            }
+<!--
+body{
+line-height:70%
+}
+-->
+</style>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+    </head>
+
+
+    <body >
+<center><p>
+
+<a href="https://bayes-stat.github.com" title="返回主页"><img src="http://bayes-stat.github.com/images/def2.png" width = "65%"></a>
+</p></center>
+<div id = "twothird">
+<h1 style="font-size:180%">Stein's Estimator:逝去的悖论</h1>
+<p class="small">13 December, 2013      
+      By 高磊 &nbsp;
+      </p>
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=default"></script>
+<div id = "content"><font size = 4>
+	<p>网页中引用本文：
+贝叶斯之道 (http://bayes-stat.github.com)</p>
+
+<p>传说中，有一个叫Stein parodox的，不知您听说过没有。直接在维基上查“Stein”，条目很多，叫”Stein”的人名 、河流、山脉、村庄，应有尽有，甚至月亮上有一座环形山，也命名为“Stein”。这里所谈的“Stein”，是一位美国统计学家–Charles Stein。他的相关维基词条还有：James-Stein’s Estimator、Stein’s lemma、Stein’s method、Stein paradox、Stein’s unbiased risk estimate和Stein’s loss。 一个人在维基上能有这么多词条，足以说明这个人的非凡之处。今天，就用通俗的语言，来介绍一下当年被视为悖论的“James-Stein’s Estimator”。(James,全名是Willard James，是Stein的一名非全职弟子，与老师合写的（James &amp; Stein1961）是他发表的唯一一篇统计文章。为了方便起见，我们把James-Stein估计简称为Stein估计。）</p>
+
+<p><img src="https://bayes-stat.github.com/images/stein1.png" alt="" /></p>
+
+<p>Stein’s Estimator缘起于Stein(1956),在James &amp; Stein(1961)中得到完善，自其提出后，广受质疑，被人们当做不起眼的悖论。是Efron,没错，就是Efron Brandly(Bootstrap、LAR算法等等的发明人），为其找到了合理的解释–Emprical Bayes。Efron的《Large-Scale InferenceEmpirical Bayes Methods for Estimation, Testing, and Prediction》 第一章：“Empirical Bayes and the James-Stein’s Estimator”详细解释了Stein’s Estimator的贝叶斯含义，其解释给人以拨云见日、别有洞天的感觉，让我们感悟到统计的魅力。我们就从Efron的著作出发，说明什么是Stein’s Estimator，为什么它被定义悖论，又该如何解释这个悖论。</p>
+
+<p><img src="https://bayes-stat.github.com/images/stein2.jpg" alt="" /></p>
+
+<p>这一赛季的棒球联赛已经进行 一段时间(棒球的例子，来源于Efron,B.;Morris, C.(1977).”Stein’s paradox in statistics”)，我们搜集到18 个球员的技术数据，整理如下表。稍微解释一下，共统计了18 名球员，这些球员都打了45 棒（AB)，统计了他们击中的次数（hits)。 例如，Clemente 共打了45 棒，击中了18 次；F Robinson 也打了45 棒，击中了17 次；Alvis 也打了45次，只击中了7 次。</p>
+
+<p><img src="https://bayes-stat.github.com/images/stein10.png" alt="" /></p>
+
+<p>摆在面前的问题是，能不能估计各位球员的击中率，以此作为该球员在未来比赛中击球率的预测值。从统计的鼻祖伯努利开始，我们就熟悉，可以用一个简单的除法比率作为击中率的估计值。以Clemente为例，他打了45 次，击中18次，所以他的击中率是$18/45=0.400$,其他球员都类似处理。戴上Fisher的眼镜来看，我们做的是极大似然估计，极大似然估计被Fisher 标榜为估计的“绝对准则”（Absolute criterion,“绝对准则”出现在Fisher（1912）”On an Absolute Criterion for Fitting Frequency Curves”标题中。)。Fisher 是一名富有战斗力的学者（一战时准备入伍，但因视力不合格而被拒绝），他的“绝对准则”不仅向Karl Pearson 的“矩估计”开了一炮，还把一大批后生给吓唬住了，以为极大似然估计是统计估计的“圣杯”。</p>
+
+<p><img src="https://bayes-stat.github.com/images/stein3.jpg" alt="" /></p>
+
+<p>长江后浪推前浪，世上本没有什么绝对准则，包括统计估计方法。Stein ，二战中在为军方服务的统计实验室工作，被授予“上尉军衔”,在二战结束后的1950年提出了Stein估计的思想。Stein 认为，当我们对一个样本的期望进行估计时，均值估计，也可以说是极大似然估计，是个好的选择（注意到，上边我们对击中率估计本质上就是求均值）。返回到例子中，如果只有Clemente 的数据，也就是说，只有单个样本（这个样本容量为45，其中18个1,27 个0），没有其他运动员数据，这时候用$18/45=0.400$做估计是木有问题的。Stein还证明，当样本个数增为两个，比如我们又有了F Robinson的数据，用极大似然方法分别来估计也是靠谱的，估计值分别为0.400和0.378。Stein又证明<strong>当样本个数超过2 个时，不管你信不信，极大似然估计就不是最好的选择！</strong>空口无凭，Stein 给出了Stein’s Estimator。令人“大跌”Fisher 眼镜的是，这个统计量的表现确确实实优于极大似然估计。这里就不再啰嗦Stein估计公式了(有兴趣的读者可查阅 <a href="http://cos.name/2012/05/chase-after-eb/">那些年，我们追的EB</a>，但我们仍然可以一睹Stein’s Estimator的“芳容”：</p>
+
+<p><img src="https://bayes-stat.github.com/images/stein6.png" alt="" /></p>
+
+<p>一图胜万言。上侧部分，是各个运动员击中率的极大似然估计，对应于Table1中<script type="math/tex">\hat{u}^{MLE}_{i}</script> 列；图中间有一条竖直虚线，指的是所有运动员击中率的平均估计，0.265，在Stein’s Estimator 中，这是非常重要的一个值；所谓的Stein’s Estimator，就是在极大地然估计的基础上，向整体水平（0.265）进行收缩（shrinkage),收缩后的估计值（对应于Table1中<script type="math/tex">\hat{u}^{JS}_{i}</script>列就是下侧直线的点）。</p>
+
+<p>下侧的值，真的比上侧的值，对未来估计更准确吗？答案是真的！在Table1中，还给出了所有运动员，未来打球真实的击中率<script type="math/tex">\mu_i</script>。将两种估计与真实值的差距取平方，再求均值（取名为均方误差），我们发现，Stein估计的均方误差比极大似然估计要小许多，说明其估计值与真实值偏离要小，用Stein估计的结果与真实值的差异竟然只有极大似然估计的$30\%$，用Efron的话说，“The gains from using <script type="math/tex">\hat{u}^{JS}</script> can be substantial”。</p>
+
+<script type="math/tex; mode=display">\left. \sum_{1}^{18}\left(\hat{u}^{JS}_{i}-\mu_i\right)^2 \middle/\sum_{1}^{18}\left(\hat{u}^{MLE}_{i}-\mu_i\right)^2 \right. =0.28</script>
+
+<p>在那个以Fisher为代表的频率学派如日中天的时代，Stein估计被看做一个悖论，不过仅仅被看做一个悖论。人们很难想象，在对一个样本（一个运动员）进行估计的时候，干嘛要把另一个样本（其他样本）拉扯进来，并对该样本估计造成影响。依Stein的逻辑，在对棒球球员击中率进行估计的时候，如果你恰好还有NBA联赛三分球投球命中数据的话，那么你最好也把这些数据加进来，势必会改善估计的结果。在统计人看来，这不免有些荒谬，为什么棒球运动员的击中率要和篮球运动员的三分命中率联合起来？这给人一种很不舒服的感觉，这也是Stein’s Estimator被当做悖论的缘由所在。我们看看陈希孺老先生在《数理统计简史》中是如何描绘这件事的,</p>
+
+<p><img src="https://bayes-stat.github.com/images/stein4.jpg" alt="" />
+<img src="https://bayes-stat.github.com/images/stein5.jpg" alt="" /></p>
+
+<blockquote>
+  <p>……</p>
+</blockquote>
+
+<blockquote>
+  <p>本来估计<script type="math/tex">a_1,\cdots,a_p</script>是<script type="math/tex">p</script>个不相干的问题。照常理，估计$a_i$只应到到与之相关的样本<script type="math/tex">x_{i1},\cdots,x_{in}</script>,而在这个场合下<script type="math/tex">\bar{x}</script>，已经是一个良好的估计。现在Stein 的结果告诉我们说，情况并非如此，<strong>在估计<script type="math/tex">a_i</script>时，除了使用<script type="math/tex">x_{i1},\cdots,x_{in}</script>外，还要使用另外<script type="math/tex">p-1</script>组与之不相干的样本，才能得到更好的结果。</strong>这个说法与常理相违背.</p>
+</blockquote>
+
+<blockquote>
+  <p>这个结果的深刻含义在于：它显示了数学理论与使用考虑之间的一种不合拍，因而使人对这种理论的有效性提出了疑问。毕竟<strong>统计学是一门实用学科</strong>,一个问题，从模型提法、优良性准则到数学论证，不论看上去多么合理，最后还得落实到应用上的合理性这一条。对Stein这个结果从实用层面来看，不会动摇人们对习以为常的估计<script type="math/tex">(\bar{X}_1,\cdots,\bar{X}_p</script>的信赖，而是反过来，<strong>对平方误差损失，对用风险函数衡量一个估计的优良性这些基本出发点的合理性提出质疑。</strong></p>
+</blockquote>
+
+<blockquote>
+  <p>……</p>
+</blockquote>
+
+<p>用平方误差损失以及风险函数来评价估计的优良性是Abraham Wald《统计决策论》的核心内容，可以看做是对Fisher UMVU估计（无偏限制下、方差一致最小估计）的重大突破。Stein,Wald的得意门生，正是在老师的分析框架证明，当样本量超过3个是，极大似然估计并不是最优的。依《简史》的观点看来，不仅Stein的结论是数学游戏，就连Wald的统计决策论也不靠谱。</p>
+
+<p>不过，《简史》的分析逻辑的出发点“实用至上”，这么说有点不太舒服，套用一句官话“<strong>实践是检验真理的唯一标准</strong>”。我非常认同这种看法，统计学到头来还是要服务现实社会，统计学家不能自娱自乐。然而，即使从“实践”的观点出发，Stein’s Estimator真的是一个纯粹的理论幌子吗？在Stein’s Estimator提出后，有些人给予了较高的评价，Neyman 就是其中之一，把它当做统计理论的重大突破；也有一些人把它当做一个悖论，认为它毫无现实意义。江山代有才人出，1970年，Efron在《科学美国人》上发表《Stein Paradox in statistics》，文章开头首先指出，Stein paradox该是寿终正寝的时候了，文中几个漂亮的例子不禁让人们对Stein估计着迷，不过文章的亮点是最后Efron对Stein现象的（经验）贝叶斯解释，顿时给人一种“山重水复疑无路，柳暗花明又一村”的感觉。</p>
+
+<p>Efron的（经验）贝叶斯解释，这里不再赘述，兴趣读者可见《Large scale inference》第一章”Emprical Bayes and James-Stien Estimator”。其中的关键假设就是，我们关心的样本之间往往是具有某种联系的，这是应用贝叶斯假设的一个前提。这里的“某种联系”，说白了，就是我们认为考察的18名运动员的击球率比较接近他们的共同平均水平。也就是说，当我们对一个样本进行估计时，我们需要首先考察其他样本的信息，这就是所谓的”Leaning from the Experience of Others”,如下图所示：</p>
+
+<p><img src="https://bayes-stat.github.com/images/stein8.png" alt="" /></p>
+
+<p>Efron认为，在科学大生产时代，相近水平的类似样本估计很普遍。比如要同时估计上万个基因水平，这些样本之间往往具有某种内在联系，因此可以利用其它样本对当前样本的估计修正。在棒球的例子中，不考察其他运动员的信息又怎么样？举个极端的例子：在这十八名球员之外，再引入一位“双球”运动员：Frank O’Connor，他一年赛季当中，只打了两个球，巧的是，他两次都打中了。那么该怎么估计他的击中率？如果用<script type="math/tex">2/2=100\%</script>作为他击中率的估计值，用Efron的话，“This is a vey silly estimate”。O’Connor 在这个赛季只打了两个球，这个数据量太少，必须通过其他球员的数据对O’Connor的估计校准，单用O’Connor的数据做估计，误差太大，就算这个数据是真实的，它顶多说明这两次他发挥不错。更精确的估计是在其他球员平均水平（0.265）基础上，稍微向高的方向偏一点，比如0.272 ，这也就相当于从极大似然估计向平均水平进行收缩。</p>
+
+<p>极大似然估计的收缩有时是剧烈的，如下图所示，极大似然估计排第一的一个样本估计，通过Stein估计，竟然收缩到了12名，其原因就是该样本的样本量较少，估计误差偏大，极大似然估计很不可信，必须借助于其他样本信息对这个样本的估计进行修正。这个道理其实可以算是一个常识，而极大似然估计会太依赖数据（意思是，极大似然估计试图把噪声解释，而实际上噪声是不需要解释的），得到与常识相悖的结论。</p>
+
+<p><img src="https://bayes-stat.github.com/images/stein9.png" alt="" /></p>
+
+<p>从极大似然估计向平均水平收缩，有着非常重要的现实意义。延续上面的例子，如果要对19名棒球运动员排名，并按排名前后发放奖金，第一名190,000，第二名180,000，依次递减。那么O’Connor 该排第几？如果不发钱，对其他运动员而言，他排第几真的无所谓。但是当估计涉及个人利益，每个人都会刷刷地打起小算盘。O’Connor拿190,000（按极大似然估计，击中率为<script type="math/tex">2/2=100\%</script>)，那18 位定会满腔怨言；而按Stein估计，O’Connor的名次大概排中游，更容易被人接受，但就算这样估计，也会受到别人的冷笑，认为他是个机会主义者，钻了空子，仅凭两个球就拿到了100,000。</p>
+
+<p>惯常理解，硝烟战场上泣血搏杀的战士被当做英雄。可是在一门学科的版图上自由驰骋、开疆扩域的智者是不是也算是英雄呢？20世纪，是一个统计英雄辈出的时代。Karl Pearson, Fisher,Neymann, Stein, Efron是否堪当此喻，后人自有评说。也许现在还不是华山论剑自我标榜的时刻，我们所能做的，就是爬到巨人的肩膀，看向更远的远方！</p>
+
+<p><img src="https://bayes-stat.github.com/images/stein7.jpg" alt="" /></p>
+
+<p><strong>参考资料</strong></p>
+
+<ul>
+  <li>陈希孺.《数理统计学简史》.2002. 湖南教育出版社.</li>
+  <li>Stein, C. (1956), ”Inadmissibility of the usual estimator for the mean of a multivariate distribution”,Proc. Third Berkeley Symp. Math. Statist. Prob. 1, pp. 197–206, MR 0084922, Zbl
+0073.35602</li>
+  <li>James, W.; Stein, C. (1961), ”Estimation with quadratic loss”, Proc. Fourth Berkeley Symp.Math. Statist. Prob. 1, pp. 361–379, MR 0133191</li>
+  <li>Morris H. DeGroot A Conversation with Charles Stein, Statistical Science, Vol. 1, No. 4(Nov., 1986), pp. 454–462.</li>
+  <li>Efron, B.; Morris, C. (1977). ”Stein’s paradox in statistics”. Scientific American 236 (5):119–127.</li>
+  <li>R. A. Fisher (1912). On an Absolute Criterion for Fitting Frequency Curves”. Messenger of Mathematics 41: 155–160.</li>
+  <li>Efron. (2012) Large-Scale Inference: Empirical Bayes Methods for Estimation, Testing, and Prediction.</li>
+  <li><a href="http://mindhacks.cn/2008/09/21/the-magical-bayesian-method/">数学之美番外篇：平凡而又神奇的贝叶斯方法(刘未鹏）</a></li>
+</ul>
+
+
+<br>
+<a href="http://bayes-stat.github.com/download/stein.pdf"  style="font-family:Microsoft YaHei;color:green" target="blank">本文PDF下载</a>
+</font>
+<hr>
+<br>
+</div>
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style_32x32">
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_tqq"></a>
+	<a class="jiathis_button_renren"></a>
+	<a class="jiathis_button_kaixin001"></a>
+	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+<div class="social">
+	<a href="https://twitter.com/share" class="twitter-share-button" data-via="zensavona" data-dnt="true">Tweet</a>
+	<!-- Override the URL and Title for the button -->
+</div>
+<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=0" async=""></script>
+<!-- UY END -->
+
+
+  
+</div>
+     </body>
+ </html>
+

@@ -1,0 +1,22 @@
+proc import out=acg dbms=excel replace datafile="D:\acg.xls";
+run;
+data acg1;
+set acg;
+where z=35;
+if zi<-2 then code='a';
+if -2<zi<0 then code='b';
+if 0<zi<2 then code='c';
+if zi>2 then code='d';
+run;
+goptions reset=all;
+proc gplot data=acg1;
+where code in('a' 'b' 'c' 'd');
+plot y*x=code /vminor=0 vaxis=axis1 
+            hminor=0 haxis=axis2;
+symbol1 font=marker value=U i=none cv=lightgreen h=0.5;
+symbol2 v=square i=none cv=lightgreen;
+symbol3 v=plus i=none cv=red;
+symbol4 v=dot i=none cv=red;
+axis1 label=(a=90 r=0 f=swiss 'distance y across brain') offset=(5,5);
+axis2 label=(f=swiss 'distance x from back to front of brain') offset=(5,5);
+run;

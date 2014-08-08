@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv=Content-Type content="text/html;charset=utf-8">
+        <meta name="robots" content="all,follow" />
+        <title>统计说（第二期） - 统计半边天-贝叶斯</title>
+        <meta name="keywords" content="贝叶斯,大规模推断,贝叶斯之道,贝叶斯讨论班,天津财经"/>
+        <meta name="author" lang="en" content="All: Demi-Panda Lab [demi-panda.com]; e-mail: blog.pandam@gmail.com" />
+        <meta name="copyright" lang="en" content="@2012 Demi_Panda Lab, All Rights Reserved!" />
+        <meta name="description" content="Bayesian statistics贝叶斯,大规模推断,贝叶斯之道,贝叶斯讨论班,天津财经" />
+        <meta property="wb:webmaster" content="eb26a33b1e192873" />
+        <meta name="chinaz-site-verification" content="54c83ea9-059c-4447-95ec-4dc8b16e60b2" />
+        <meta name="baidu_union_verify" content="67d51e25cc69ae324f028d2d333b753a">
+        <meta name="chinaz-site-verification" content="081e7651-48c6-4c2f-a569-99321685eab1" />
+        <link rel="shortcut icon" href="http://bayes-stat.github.com/media/demi/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" media="screen,projection" type="text/css" href="http://gaolei786.github.com/media/demi/css/style.css" />
+        <link rel="stylesheet" media="screen,projection" type="text/css" href="http://gaolei786.github.com/media/demi/css/main.css" />
+        <link rel="stylesheet" media="screen,projection" type="text/css" href="http://gaolei786.github.com/media/demi/css/reset.css" />
+        <link rel="stylesheet" media="screen,projection" type="text/css" href="http://gaolei786.github.com/media/demi/css/superfish.css" />
+        <link rel="stylesheet" media="screen,projection" type="text/css" href="http://gaolei786.github.com/media/demi/css/prettify.css" />
+        <link rel="alternate" type="application/rss+xml" title="统计半边天-贝叶斯" href="http://bayes-stat.github.com/rss.xml" />
+        <script src="http://bayes-stat.github.com/media/js/prettify.js" type="text/javascript"></script>
+        <script src="http://bayes-stat.github.com/media/js/jquery-1.6.1.min.js" type="text/javascript"></script>
+        <script src="http://bayes-stat.github.com/media/js/jquery.jcarousel.min.js" type="text/javascript"></script>
+        <script src="http://bayes-stat.github.com/media/js/jquery.tagcloud.js" type="text/javascript"></script>
+        <script src="http://bayes-stat.github.com/media/js/jquery.demi.slider.js" type="text/javascript"></script>
+		
+<style type="text/css">
+#content
+{
+position:relative;
+width: 960px
+}
+div#third{width:33%;float:left}
+div#twothird{width:60%;text-align:left;
+ margin:0 auto;line-height:140%"}
+div#content{width:100%;text-indent:2em;font-size:120%;}
+div#content p {font-family:Microsoft YaHei;}
+div#content img  { padding:0; border:0;max-width:500px;align:center;
+max-height:300px} 
+div#content li {text-indent:0em}
+div#content p {line-height: 125%}
+div#content ul {margin-left:2em}
+li {line-height: 125%}
+code {
+            margin: 0 2px;
+            padding: 0px 5px;
+            font-size: 15px;
+
+            }
+<!--
+body{
+line-height:70%
+}
+-->
+</style>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+    </head>
+
+
+    <body >
+<center><p>
+
+<a href="https://bayes-stat.github.com" title="返回主页"><img src="http://bayes-stat.github.com/images/def3.png" width = "65%"></a>
+</p></center>
+<div id = "twothird">
+<h1 style="font-size:180%">统计说（第二期）</h1>
+<p class="small">23 June, 2014      
+      By 闫超（主编） &nbsp;
+      </p>
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=default"></script>
+<div id = "content"><font size = 4>
+	<p><a href="http://bayes-stat.github.io/download/stat-say/统计说2014.pdf"><img src="https://bayes-stat.github.com/images/statsay2.png" alt="" /> </a></p>
+
+<p>时光的河入海流</p>
+
+<p>终于我们分头走</p>
+
+<p>很欣慰尚好的青春里</p>
+
+<p>你我之间有《统计说》相连</p>
+
+<p>伴随新一期《统计说》的制作完成，我们也要告别青春、离开校园了。喜悦、忧伤、留恋、迷茫、欣慰、恐惧……各种情感纷繁涌上，一时语塞。只恨自己不能像安妮宝贝一样，达到“除了写作，找不到其他更理性更彻底的整理与清除方式。”这样一种境界。但是我还在试着说，试着写，而且我不是一个人。</p>
+
+<p>强烈的情感总要有发泄的途径，精彩的故事总要跟身边的人分享。在刘老师和刘旭学姐的号召下，我和同门几个尝试诉说对青春的感悟，书写对统计的理解，而且期待有双耳朵来聆听、有双眼睛与我们相遇。于是2013 年7 月，《统计说》创刊号正式发布。</p>
+
+<p>花开花落，云卷云舒。从杂志创刊号发行到现在，已有整整一年的时间。在这期间有人鼓励、有人好奇，同时也有质疑之声。但是不去翻山越岭，你怎么知道大山那边的风景到底有多美；不去经历事故，你怎么知道自己的体内蕴含一个多么强大的灵魂！所以我们坚持下来了，第二期如期制作完成，网站也在积极筹划中。</p>
+
+<p>青春是最美的故事。也许在青春的道路上我们已渐行渐远，但我们挥洒过汗水，得到了成长！伴随我们成长的还有《统计说》和亲爱的读者你。希望通过我们的杂志，能让你增加一点对统计学的认识和兴趣，引起一些对成长和学习的共鸣。同时，也真诚地期待你的参与！</p>
+
+<hr />
+
+
+
+<br>
+
+<a href="http://bayes-stat.github.com/download/stat-say/统计说2014.pdf"  style="font-family:Microsoft YaHei;color:green" target="blank">统计说第二期（PDF版）</a>
+      
+</font>
+<hr>
+<br>
+</div>
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style_32x32">
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_tqq"></a>
+	<a class="jiathis_button_renren"></a>
+	<a class="jiathis_button_kaixin001"></a>
+	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+<div class="social">
+	<a href="https://twitter.com/share" class="twitter-share-button" data-via="zensavona" data-dnt="true">Tweet</a>
+	<!-- Override the URL and Title for the button -->
+</div>
+<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=0" async=""></script>
+<!-- UY END -->
+
+
+  
+</div>
+     </body>
+ </html>
+

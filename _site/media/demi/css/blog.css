@@ -1,0 +1,114 @@
+#header .top-navigation .docs { background: transparent url(../img/docs.png) no-repeat scroll left center; }
+#header .top-navigation .home { background: transparent url(../img/home.png) no-repeat scroll left center; }
+
+/* markdown */
+.entry-content pre, blockquote {
+  font-size:1.0em;
+  overflow:auto;
+  padding:5px;
+  clear:none;
+  float:none;
+  margin:0;
+  overflow:auto !important;
+  width:auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 5px;
+}
+.entry-content blockquote {
+  background:#F1F1FF none repeat scroll 0 0;
+  color:#000000;
+  line-height:1.333;
+  border:1px dashed #BBBBBB;
+}
+.entry-content pre {
+  background-color: #EFE; /*#EFE, #E8F2DA*/
+  color: #333333;
+  line-height: 120%;
+  border: 1px solid #084; /*#084, #ac9*/
+  border-left: none;
+  border-right: none;
+}
+.entry-content div pre {
+  background: transparent;
+  border:none;
+}
+.entry-content code {
+  border-bottom-style: dashed;
+  border-color: #cacaca;
+  border-width: 1px;
+  background-color: #EFE;
+  padding-top: 0.1em;
+  padding-left: 5px;
+  margin-left: 5px;
+  padding-right: 5px;
+  margin-right: 5px;
+}
+.entry-content pre code {
+  padding: 0px;
+  margin: 0px;
+  border-bottom-style: none;
+}
+
+#post-bottom{                                                                     
+  height:20px;
+  margin-top:10px;
+  margin-bottom:10px;
+  padding:5px;
+
+}
+
+.jiathis_txt{
+    color:gray;
+  }
+
+
+#ckepop a, section.comments a{                                                      
+  border-bottom:0px;
+}
+
+.left{ float:left}
+.right{float:right}
+
+section.site > section.content nav.page-navigation {
+  background-color:#162e41;
+  margin:1em 0;
+  min-height:2em;
+  padding:.25em;
+  position:relative;
+}
+
+section.site > section.content nav.page-navigation ul li {
+  max-width:60%;
+  overflow:hidden;
+  position:absolute;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+section.site > section.content nav.page-navigation ul li a {
+  border-bottom:1px dashed #666;
+  color:#DDD;
+  font:12px tahoma;
+  padding:.25em;
+}
+
+section.site > section.content nav.page-navigation ul li a:hover {
+  border-bottom:1px dashed #BFEFFF;
+  color:#C0FF3E;
+  font:12px tahoma;
+  padding:.25em;
+}
+
+section.site > section.content nav.page-navigation ul li.center {
+  left:23em;
+}
+
+section.site > section.content nav.page-navigation ul li.left {
+  left:.75em;
+}
+
+section.site > section.content nav.page-navigation ul li.right {
+  right:.75em;
+}
+

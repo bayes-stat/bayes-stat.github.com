@@ -14,7 +14,7 @@ slide: "/download/uncertainty_bayes.pdf"
 论文中引用本文：
 刘乐平. 不确定性与 Bayes 统计[J]. 中国统计, 2003, 7: 17-18.
 
-网页中引用本文：
+网页引用本文：
 贝叶斯之道 (http://bayes-stat.github.com)
 
 
