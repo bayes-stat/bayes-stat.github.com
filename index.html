@@ -1,4 +1,64 @@
----                                                     
-layout: index
----
+<div  style="text-align:left; margin:0 auto; width:1100px;line-height:150%;font-size:120%" >
+    <div  style="height:170px;width:30%;float:left;margin-right:4%;margin-left:4%">
+
+          <span style="margin-left:80%;" ><a href="/idea" rel="bookmark" title="更多[乐传贝叶斯之道]的文章" target="_blank">更  多</a></span>
+
+        <ul class="ul-list nomb">
+            {% for post in site.categories.idea limit:6 %}
+            <li><span class="date">
+                [ <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%m/%d" }}</time> ]</span> 
+            {% if post.short_title %}
+            <a href="{{ site.baseurl }}{{post.url}}" class="article" title="{{ post.title }}">{{ post.short_title }}</a>
+            {% else %}
+            <a href="{{ site.baseurl }}{{post.url}}" class="article" title="{{ post.title }}">{{ post.title }}</a>
+            {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div  style="height:170px;width:30%;float:left;margin-right:2%">
+
+             <span style="margin-left:80%;" ><a href="{{site.baseurl}}/skill" rel="bookmark" title="更多[喜授贝叶斯之业]的文章" target="_blank">更  多</a></span>       
+            <!--
+            <span class="archive_more"><a href="/Rlang/" rel="bookmark" title="更多[研发实践]的文章">更  多</a></span>
+            -->
+
+        <ul class="ul-list nomb">
+            {% for post in site.categories.skill limit:6 %}
+            <li><span class="date">
+                [ <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%m/%d" }}</time> ]</span> 
+            {% if post.short_title %}
+            <a href="{{ site.baseurl }}{{post.url}}" class="article" title="{{ post.title }}">{{ post.short_title }}</a>
+            {% else %}
+            <a href="{{ site.baseurl }}{{post.url}}" class="article" title="{{ post.title }}">{{ post.title }}</a>
+            {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>      
+    <div  style="height:170px;width:30%;float:left">
+
+             <span style="margin-left:70%;" ><a href="{{site.baseurl}}/puzzle" rel="bookmark" title="更多[善解贝叶斯之惑]的文章" target="_blank">更  多</a></span>       
+            <!--
+            <span class="archive_more"><a href="/itnews" rel="bookmark" title="更多[IT资讯]的文章">更  多</a></span>
+            -->
+
+        <ul class="ul-list nomb">
+            {% for post in site.categories.puzzle limit:10 %}
+            <li><span class="date">
+                [ <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%m/%d" }}</time> ]</span> 
+            {% if post.short_title %}
+            <a href="{{ site.baseurl }}{{post.url}}" class="article" title="{{ post.title }}">{{ post.short_title }}</a>
+            {% else %}
+            <a href="{{ site.baseurl }}{{post.url}}" class="article" title="{{ post.title }}">{{ post.title }}</a>
+            {% endif %}
+
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+
 
