@@ -1,4 +1,4 @@
----
+﻿---
 layout: defaultpost3
 ---
 
@@ -13,10 +13,10 @@ layout: defaultpost3
 	{{ content }}
 
 <br>
-{% if page.pdf != '/download/stat-say/统计说2014.pdf' %}
-<a href="{{ site.baseurl }}{{page.pdf}}"  style="font-family:Microsoft YaHei;color:green" target="blank">本文PDF下载</a>
-      {% else %}
+{% if page.pdf == '/download/stat-say/统计说2014.pdf' %}
 <a href="{{ site.baseurl }}{{page.pdf}}"  style="font-family:Microsoft YaHei;color:green" target="blank">统计说第二期（PDF版）</a>
+      {% else %}
+<a href="{{ site.baseurl }}{{page.pdf}}"  style="font-family:Microsoft YaHei;color:green" target="blank">本文PDF下载</a>
       {% endif %}
 </font>
 <hr>
