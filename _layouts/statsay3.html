@@ -1,5 +1,5 @@
-﻿---
-layout:defaultpost3
+---
+layout: defaultpost3
 ---
 
 <h1 style="font-size:180%">{{ page.title }}</h1>
@@ -13,10 +13,14 @@ layout:defaultpost3
 	{{ content }}
 
 <br>
-<a href="{{ site.baseurl }}{{page.pdf}}"  style="font-family:Microsoft YaHei;color:green" target="blank">统计说第三期（PDF版）</a>
+{% if page.pdf != '/download/stat-say/统计说2014.pdf' %}
+<a href="{{ site.baseurl }}{{page.pdf}}"  style="font-family:Microsoft YaHei;color:green" target="blank">本文PDF下载</a>
+      {% else %}
+<a href="{{ site.baseurl }}{{page.pdf}}"  style="font-family:Microsoft YaHei;color:green" target="blank">统计说第二期（PDF版）</a>
+      {% endif %}
+</font>
 <hr>
 <br>
-</font>
 </div>
 <!-- JiaThis Button BEGIN -->
 <div class="jiathis_style_32x32">
