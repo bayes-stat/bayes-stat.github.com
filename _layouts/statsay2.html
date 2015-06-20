@@ -1,0 +1,46 @@
+---
+layout: defaultpost3
+---
+
+<h1 style="font-size:180%">{{ page.title }}</h1>
+<p class="small">{{ page.date | date: '%d %B, %Y' }}      {% if page.author != null %}
+      By {{ page.author }} &nbsp;
+      {% else %}
+      By GaoLei
+      {% endif %}</p>
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=default"></script>
+<div id = "content"><font size = 4>
+	{{ content }}
+
+<br>
+{% if page.pdf != '/download/stat-say/统计说2014.pdf' %}
+<a href="{{ site.baseurl }}{{page.pdf}}"  style="font-family:Microsoft YaHei;color:green" target="blank">本文PDF下载</a>
+      {% else %}
+<a href="{{ site.baseurl }}{{page.pdf}}"  style="font-family:Microsoft YaHei;color:green" target="blank">统计说第二期（PDF版）</a>
+      {% endif %}
+</font>
+<hr>
+<br>
+</div>
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style_32x32">
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_tqq"></a>
+	<a class="jiathis_button_renren"></a>
+	<a class="jiathis_button_kaixin001"></a>
+	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+<div class="social">
+	<a href="https://twitter.com/share" class="twitter-share-button" data-via="zensavona" data-dnt="true">Tweet</a>
+	<!-- Override the URL and Title for the button -->
+</div>
+<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=0" async=""></script>
+<!-- UY END -->
+
+
